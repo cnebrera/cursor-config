@@ -20,12 +20,22 @@ NC='\033[0m' # No Color
 
 # Source and destination paths
 CURSOR_USER_DIR="$HOME/Library/Application Support/Cursor/User"
-BACKUP_DIR="$(cd "$(dirname "$0")" && pwd)"
+CURSOR_CONFIG_DIR="$HOME/.cursor"
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+BACKUP_DIR="$SCRIPT_DIR/backup"
 
 echo -e "${BLUE}╔════════════════════════════════════════════╗${NC}"
 echo -e "${BLUE}║   Cursor Configuration Restore Script     ║${NC}"
 echo -e "${BLUE}╚════════════════════════════════════════════╝${NC}"
 echo ""
+
+# Check if backup directory exists
+if [ ! -d "$BACKUP_DIR" ]; then
+    echo -e "${RED}Error: Backup directory not found${NC}"
+    echo -e "${YELLOW}Expected location: $BACKUP_DIR${NC}"
+    echo -e "${YELLOW}Please run the backup script first or clone the repository.${NC}"
+    exit 1
+fi
 
 # Check if Cursor User directory exists
 if [ ! -d "$CURSOR_USER_DIR" ]; then
@@ -70,6 +80,26 @@ if [ -d "$BACKUP_DIR/snippets" ]; then
     fi
 else
     echo -e "${YELLOW}   ⚠ Snippets directory not found in backup${NC}"
+fi
+
+# Restore cli-config.json
+if [ -f "$BACKUP_DIR/cli-config.json" ]; then
+    echo -e "${YELLOW}⚙️  Restoring cli-config.json...${NC}"
+    mkdir -p "$CURSOR_CONFIG_DIR"
+    cp "$BACKUP_DIR/cli-config.json" "$CURSOR_CONFIG_DIR/cli-config.json"
+    echo -e "${GREEN}   ✓ cli-config.json restored (AI permissions & settings)${NC}"
+else
+    echo -e "${RED}   ✗ cli-config.json not found in backup${NC}"
+fi
+
+# Restore mcp.json
+if [ -f "$BACKUP_DIR/mcp.json" ]; then
+    echo -e "${YELLOW}🔌 Restoring mcp.json...${NC}"
+    mkdir -p "$CURSOR_CONFIG_DIR"
+    cp "$BACKUP_DIR/mcp.json" "$CURSOR_CONFIG_DIR/mcp.json"
+    echo -e "${GREEN}   ✓ mcp.json restored (MCP integrations)${NC}"
+else
+    echo -e "${RED}   ✗ mcp.json not found in backup${NC}"
 fi
 
 # Restore .cursorrules
