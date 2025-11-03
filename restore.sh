@@ -72,6 +72,17 @@ else
     echo -e "${YELLOW}   ⚠ Snippets directory not found in backup${NC}"
 fi
 
+# Restore .cursorrules
+if [ -f "$BACKUP_DIR/.cursorrules" ]; then
+    echo -e "${YELLOW}🤖 Restoring Cursor AI Rules...${NC}"
+    # Copy to home directory for global rules
+    cp "$BACKUP_DIR/.cursorrules" "$HOME/.cursorrules"
+    echo -e "${GREEN}   ✓ .cursorrules restored to home directory${NC}"
+    echo -e "${BLUE}   ℹ️  You can also copy .cursorrules to specific project directories${NC}"
+else
+    echo -e "${YELLOW}   ⚠ .cursorrules not found in backup${NC}"
+fi
+
 # Extensions reminder
 echo ""
 echo -e "${BLUE}🔌 Extensions Installation:${NC}"
@@ -94,5 +105,8 @@ echo "  1. Restart Cursor: Cmd+Q and reopen"
 echo "  2. Install extensions from extensions.txt"
 echo "  3. Install JetBrains Mono font (if not installed):"
 echo "     brew install font-jetbrains-mono"
+echo "  4. .cursorrules has been copied to your home directory"
+echo "     Copy to specific projects if needed:"
+echo "     cp ~/.cursorrules /path/to/your/project/"
 echo ""
 

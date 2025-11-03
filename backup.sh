@@ -59,6 +59,14 @@ else
     echo -e "${YELLOW}   ⚠ Snippets directory not found${NC}"
 fi
 
+# Note: .cursorrules is maintained in the backup directory
+echo -e "${YELLOW}🤖 Cursor AI Rules (.cursorrules)${NC}"
+if [ -f "$BACKUP_DIR/.cursorrules" ]; then
+    echo -e "${GREEN}   ✓ .cursorrules file present in backup${NC}"
+else
+    echo -e "${YELLOW}   ⚠ .cursorrules not found - consider creating one${NC}"
+fi
+
 # Update extensions list (manual - update as needed)
 echo -e "${YELLOW}🔌 Extensions list is in extensions.txt${NC}"
 echo -e "${YELLOW}   Update it manually if you install new extensions${NC}"
@@ -74,6 +82,7 @@ echo -e "${BLUE}Backed up files:${NC}"
 echo "  • settings.json"
 echo "  • keybindings.json"
 echo "  • snippets/"
+echo "  • .cursorrules"
 echo ""
 echo -e "${YELLOW}Next steps:${NC}"
 echo "  1. Review changes: git diff"

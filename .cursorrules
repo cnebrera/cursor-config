@@ -1,0 +1,94 @@
+# Cursor AI Rules Configuration
+# These rules guide the AI assistant's behavior when working on code
+
+## File Operations
+- Don't ask for confirmation on file edits unless the file is outside the project scope
+- Always prefer editing existing files over creating new ones unless explicitly required
+
+## Code Quality Standards
+
+### Documentation
+- Code must be well documented, including:
+  - Class documentation
+  - Function/method documentation
+  - Variable documentation with meaningful descriptions
+  - Internal line comments explaining complex logic
+- Use language-specific documentation standards:
+  - Javadoc for Java
+  - JSDoc for JavaScript/TypeScript
+  - Docstrings for Python
+  - XML comments for C#
+- Always write documentation and comments in English
+
+### Code Structure
+- Follow a divide-and-conquer approach
+- Keep functions reasonably sized and focused on a single responsibility
+- Break down complex functions into smaller, manageable units
+- Maintain clear separation of concerns
+- Use design patterns appropriately
+
+### Code Quality Principles
+- Follow SonarQube quality principles:
+  - Avoid code duplication
+  - Maintain low cyclomatic complexity
+  - Keep function/method length reasonable
+  - Avoid deep nesting
+  - Follow SOLID principles
+- Never provide "quick and dirty" solutions
+- Always prioritize maintainability and readability
+- Write production-ready code, not prototypes
+
+### Error Handling and Logging
+- Implement proper error and exception management
+- Ensure all errors are well controlled and properly propagated
+- Include appropriate logging at different levels:
+  - INFO for important state changes
+  - WARN for recoverable issues
+  - ERROR for failures
+  - DEBUG for troubleshooting information
+- Use structured logging when available
+- Include contextual information in log messages
+
+### Naming Conventions
+- Never use short or abbreviated names for variables or methods
+- All naming must be descriptive and self-explanatory
+- Use meaningful names that express intent
+- Follow language-specific naming conventions:
+  - camelCase for Java/JavaScript methods and variables
+  - PascalCase for classes
+  - snake_case for Python
+  - UPPER_SNAKE_CASE for constants
+- Always use English for all code elements (variables, functions, classes, etc.)
+
+## Language Requirements
+- All code, comments, documentation, logs, and commit messages must be in English
+- Exception messages and user-facing text should also be in English unless specifically required otherwise
+
+## Version Control
+- **NEVER perform a commit or push to git without asking first**
+- **NEVER skip hooks (--no-verify, --no-gpg-sign, etc.) unless explicitly requested**
+- **NEVER run destructive/irreversible git commands (force push, hard reset, etc.) unless explicitly requested**
+- **NEVER force push to main/master branches** - warn the user if they request it
+- Always provide clear commit messages that explain the changes
+- Follow conventional commit format when appropriate
+
+## Code Generation Philosophy
+- Focus on writing maintainable, scalable, and testable code
+- Consider edge cases and potential failure scenarios
+- Implement proper input validation
+- Use defensive programming techniques
+- Optimize for readability first, performance second (unless performance is the explicit goal)
+- Include appropriate unit tests when requested or when it makes sense
+
+## Technology Stack Preferences
+- Use modern language features and best practices
+- Leverage well-established libraries and frameworks
+- Follow the principle of least surprise
+- Maintain consistency with existing codebase patterns
+
+## Additional Guidelines
+- When uncertain, ask for clarification rather than making assumptions
+- Provide explanations for complex implementations
+- Suggest improvements when obvious issues are detected
+- Reference documentation or standards when making recommendations
+

@@ -7,6 +7,7 @@ This repository contains a complete backup of your Cursor editor configuration, 
 - **`settings.json`** - All editor settings (fonts, theme, editor preferences)
 - **`keybindings.json`** - Custom keyboard shortcuts
 - **`snippets/`** - Code snippets (if any)
+- **`.cursorrules`** - AI assistant rules and coding standards
 - **`extensions.txt`** - List of installed extensions
 - **`backup.sh`** - Script to backup current configuration
 - **`restore.sh`** - Script to restore configuration on a new machine
@@ -22,6 +23,12 @@ This repository contains a complete backup of your Cursor editor configuration, 
   - Git auto-fetch enabled
   - Smart commit enabled
   - Font ligatures enabled
+- **AI Rules:**
+  - SonarQube quality standards enforced
+  - Comprehensive documentation required
+  - Proper error handling and logging
+  - English-only code and comments
+  - Git safety rules (no automatic commits)
 
 ## 🔄 How to Backup (Update Configuration)
 
@@ -36,7 +43,8 @@ This will:
 1. Copy current `settings.json` from Cursor
 2. Copy current `keybindings.json`
 3. Copy any snippets you've created
-4. Show you what was backed up
+4. Verify `.cursorrules` is present
+5. Show you what was backed up
 
 ### Committing Changes to Git
 
@@ -84,7 +92,17 @@ chmod +x restore.sh
 ./restore.sh
 ```
 
-### Step 4: Install Extensions
+### Step 4: Verify Cursor Rules
+
+The `.cursorrules` file has been copied to your home directory (`~/.cursorrules`) for global AI rules.
+
+**For project-specific rules:**
+```bash
+# Copy to a specific project
+cp ~/.cursorrules /path/to/your/project/
+```
+
+### Step 5: Install Extensions
 
 Open Cursor (`Cmd + Shift + X`) and search for each extension listed in `extensions.txt`:
 
@@ -97,7 +115,7 @@ Open Cursor (`Cmd + Shift + X`) and search for each extension listed in `extensi
 - Kotlin Language Support (fwcd.kotlin)
 - And others as listed in `extensions.txt`
 
-### Step 5: Restart Cursor
+### Step 6: Restart Cursor
 
 ```bash
 # Quit Cursor
@@ -106,6 +124,42 @@ Cmd + Q
 # Reopen Cursor
 # All settings should now be applied!
 ```
+
+## 🤖 Cursor AI Rules
+
+The `.cursorrules` file contains comprehensive guidelines for the AI assistant:
+
+### Code Quality
+- Follow SonarQube principles (avoid duplication, maintain low complexity)
+- Apply SOLID principles
+- Write production-ready, maintainable code
+- Never provide "quick and dirty" solutions
+
+### Documentation
+- Comprehensive documentation for classes, functions, and variables
+- Use language-specific standards (Javadoc, JSDoc, docstrings, etc.)
+- Include inline comments for complex logic
+- All documentation must be in English
+
+### Error Handling
+- Proper exception management with controlled propagation
+- Structured logging at appropriate levels (INFO, WARN, ERROR, DEBUG)
+- Include contextual information in logs
+
+### Naming Conventions
+- Descriptive names only (no abbreviations or short names)
+- Follow language-specific conventions (camelCase, PascalCase, snake_case)
+- Express intent clearly through naming
+
+### Version Control Safety
+- **Never commit or push without explicit permission**
+- Never skip git hooks
+- Never force push to main/master
+- Always provide clear commit messages
+
+### Usage
+- **Global rules:** Place in `~/.cursorrules` (affects all projects)
+- **Project-specific rules:** Place in project root (overrides global rules)
 
 ## 🛠️ Manual Configuration
 
@@ -121,6 +175,7 @@ CURSOR_DIR="$HOME/Library/Application Support/Cursor/User"
 cp "$CURSOR_DIR/settings.json" ~/cursor-config/
 cp "$CURSOR_DIR/keybindings.json" ~/cursor-config/
 cp -r "$CURSOR_DIR/snippets/" ~/cursor-config/snippets/
+# Note: .cursorrules is maintained directly in the backup directory
 ```
 
 ### Restore Manually
@@ -132,6 +187,10 @@ CURSOR_DIR="$HOME/Library/Application Support/Cursor/User"
 cp ~/cursor-config/settings.json "$CURSOR_DIR/"
 cp ~/cursor-config/keybindings.json "$CURSOR_DIR/"
 cp -r ~/cursor-config/snippets/ "$CURSOR_DIR/"
+# Copy .cursorrules to home directory (global) or project directory
+cp ~/cursor-config/.cursorrules ~/
+# Or to a specific project:
+# cp ~/cursor-config/.cursorrules /path/to/your/project/
 ```
 
 ## 📝 Customization
