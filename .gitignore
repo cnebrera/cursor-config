@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might contain sensitive information
+# (Uncomment if you don't want to share certain settings)
+# settings.json
+
+# Backup files
+*.backup
+*.bak
+*~
+
+# Logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+

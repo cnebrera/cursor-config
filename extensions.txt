@@ -1,0 +1,27 @@
+# Cursor/VSCode Extensions Installed
+# Generated on $(date)
+#
+# To install an extension, search for it in Cursor's Extensions panel (Cmd+Shift+X)
+# or use the command: cursor --install-extension <extension-id>
+
+# Theme & Icons
+vscode-icons (Icon theme)
+IntelliJ IDEA Theme (Color theme: IntelliJ IDEA New UI Dark)
+
+# Languages & Frameworks
+redhat.java (Java Language Support)
+redhat.vscode-yaml (YAML Language Support)
+fwcd.kotlin (Kotlin Language Support)
+ms-python.python (Python Language Support)
+ms-toolsai.jupyter (Jupyter Notebook Support)
+ms-vscode.powershell (PowerShell Language Support)
+
+# Cloud & Containers
+ms-vscode-remote.remote-containers (Dev Containers)
+
+# Tools & Utilities
+visualstudioexptteam.intellicode-api-usage-examples (IntelliCode)
+
+# Quarkus & Spring Boot (if using Java frameworks)
+# Add any Quarkus/Spring Boot extensions you have installed
+

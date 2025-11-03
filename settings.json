@@ -1,0 +1,71 @@
+{
+    "redhat.telemetry.enabled": true,
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-11",
+            "path": "/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home",
+            "default": true
+        },
+        {
+            "name": "JavaSE-17",
+            "path": "/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home"
+        },
+        {
+            "name": "JavaSE-21",
+            "path": "/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home"
+        },
+        {
+            "name": "JavaSE-24",
+            "path": "/Library/Java/JavaVirtualMachines/graalvm-24.jdk/Contents/Home"
+        }
+    ],
+    "workbench.colorTheme": "IntelliJ IDEA New UI Dark",
+    "explorer.confirmDragAndDrop": false,
+    "explorer.confirmDelete": false,
+    "git.autofetch": true,
+    "editor.fontSize": 13,
+    "workbench.settings.applyToAllProfiles": [
+        "editor.fontSize"
+    ],
+    "files.autoSave": "onFocusChange",
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "quarkus.tools.alwaysShowWelcomePage": false,
+    "python.createEnvironment.trigger": "off",
+    "extensions.experimental.affinity": {
+        "ms-toolsai.jupyter": 2,
+        "ms-toolsai.jupyter-renderers": 2,
+        "ms-python.python": 2,
+        "ms-python.vscode-pylance": 2
+    },
+    "git.openRepositoryInParentFolders": "always",
+    "makefile.configureOnOpen": true,
+    "workbench.iconTheme": "vscode-icons",
+    "vs-kubernetes": {
+        "vs-kubernetes.crd-code-completion": "enabled",
+        "vscode-kubernetes.helm-path-mac": "/Users/cnebrera/.vs-kubernetes/tools/helm/darwin-arm64/helm",
+        "vscode-kubernetes.minikube-path-mac": "/Users/cnebrera/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
+        "vscode-kubernetes.kubectl-path-mac": "/Users/cnebrera/.vs-kubernetes/tools/kubectl/kubectl"
+    },
+    "diffEditor.maxComputationTime": 0,
+    "spring-boot.ls.java.heap": "",
+    "go.toolsManagement.autoUpdate": true,
+    "git.replaceTagsWhenPull": true,
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "editor.fontFamily": " 'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.fontWeight": "400",
+    "editor.lineHeight": 1.5,
+    "terminal.integrated.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.inlayHints.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+    "editor.inlineSuggest.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace",
+    "notebook.markup.fontFamily": "'JetBrains Mono', Menlo, Monaco, 'Courier New', monospace"
+}
